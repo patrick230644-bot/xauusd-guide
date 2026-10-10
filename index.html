@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>XAUUSD für Anfänger: Grundlagen, Strategien, Risiko</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700&family=Public+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F3F5F7;--panel:#fff;--ink:#0E1B26;--mute:#566673;--line:#d6dde3;--gold:#A87400;--goldbg:#F8EBC8;--up:#1E8C74;--dn:#C9423C;--hero:#0B1620;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0F1519;--panel:#16202a;--ink:#E7ECEF;--mute:#9fadb8;--line:#2a3640;--gold:#E3B04B;--goldbg:#2b2411;--up:#35B79B;--dn:#E5706A;--hero:#081018}}
+:root[data-theme="dark"]{--bg:#0F1519;--panel:#16202a;--ink:#E7ECEF;--mute:#9fadb8;--line:#2a3640;--gold:#E3B04B;--goldbg:#2b2411;--up:#35B79B;--dn:#E5706A;--hero:#081018}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 56px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.65 "Public Sans",system-ui,sans-serif}
+h1,h2,h3{font-family:"Bricolage Grotesque",system-ui,sans-serif;line-height:1.12;margin:0}
+a{color:inherit}
+a:focus-visible,input:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--hero);color:#E7ECEF;border-bottom:1px solid #ffffff1a}
+.bar div{max-width:1040px;margin:0 auto;padding:0 20px;display:flex;gap:1.4rem;align-items:center;overflow-x:auto;white-space:nowrap;height:52px;font-size:.92rem}
+.bar b{font-family:"Bricolage Grotesque",sans-serif;font-size:1.05rem;color:#E3B04B;margin-right:auto}
+.bar a{text-decoration:none;color:#c3cfd8}
+.bar a:hover{color:#fff}
+.hero{background:var(--hero);color:#E7ECEF;padding:3rem 20px 0;overflow:hidden}
+.hw{max-width:1040px;margin:0 auto}
+.hero h1{font-size:clamp(2.3rem,8vw,4rem);font-weight:700;letter-spacing:-.025em;max-width:16ch}
+.hero p{color:#aebbc6;font-size:1.15rem;max-width:54ch;margin:1rem 0 0}
+.chart{display:block;width:100%;height:auto;margin-top:2rem}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:0;background:var(--panel);max-width:1040px;margin:-1px auto 0;border:1px solid var(--line);border-top:3px solid var(--gold)}
+.stats div{padding:1.1rem 1.3rem;border-right:1px solid var(--line)}
+.stats strong{display:block;font:700 1.6rem "Bricolage Grotesque",sans-serif;color:var(--gold)}
+.stats span{color:var(--mute);font-size:.9rem}
+main{max-width:1040px;margin:0 auto;padding:0 20px}
+section{padding-top:4rem}
+h2{font-size:clamp(1.7rem,5vw,2.3rem);font-weight:700;margin-bottom:.8rem;letter-spacing:-.015em}
+h3{font-size:1.15rem;font-weight:700;margin-bottom:.25rem}
+p{margin:.6rem 0;max-width:64ch}
+.warn{background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--dn);padding:1rem 1.2rem;margin:2.5rem 0 0;font-size:.95rem;max-width:760px}
+.terms{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);margin-top:1.4rem}
+.terms div{background:var(--panel);padding:1rem 1.2rem}
+.terms h3{color:var(--gold)}
+.terms p{font-size:.93rem;margin:0;color:var(--mute)}
+.drv{margin-top:1.4rem;border-top:1px solid var(--line)}
+.drv div{display:grid;grid-template-columns:1fr auto;gap:1rem;align-items:center;padding:.9rem 0;border-bottom:1px solid var(--line)}
+.drv p{margin:0;font-size:.95rem;color:var(--mute)}
+.tag{font:600 .9rem "Bricolage Grotesque",sans-serif;padding:.3rem .7rem;border-radius:99px;white-space:nowrap}
+.up{background:#1E8C7425;color:var(--up)}.dn{background:#C9423C25;color:var(--dn)}
+.tl{margin-top:1.6rem;background:var(--panel);border:1px solid var(--line);padding:1.2rem}
+.hrs{position:relative;display:grid;grid-template-columns:repeat(24,1fr);font-size:.7rem;color:var(--mute);margin-left:70px}
+.sr{position:relative;height:30px;margin-top:8px;margin-left:70px;background:repeating-linear-gradient(90deg,var(--line) 0 1px,transparent 1px 4.1667%)}
+.sr i{position:absolute;top:4px;height:22px;border-radius:4px;background:var(--ink);opacity:.82}
+.sr em{position:absolute;left:-70px;font:normal 600 .82rem/30px "Bricolage Grotesque",sans-serif;width:66px}
+.ov{position:absolute;top:0;bottom:0;left:calc(70px + (100% - 70px) * .5833);width:calc((100% - 70px) * .1458);background:var(--gold);opacity:.22;pointer-events:none}
+.tl{position:relative}
+.strat{display:grid;grid-template-columns:200px 1fr;gap:1.5rem;align-items:center;padding:1.4rem 0;border-bottom:1px solid var(--line)}
+.mini{width:100%;height:auto;background:var(--hero);border-radius:6px}
+.sw{font-size:.9rem;color:var(--mute)}
+.risk{display:grid;grid-template-columns:1fr 300px;gap:2rem;align-items:center;margin-top:1.2rem}
+ul{padding-left:1.2rem;max-width:64ch}li{margin:.4rem 0}
+.rr{width:100%;height:auto;background:var(--panel);border:1px solid var(--line);border-radius:6px}
+.calc{background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--gold);padding:1.4rem;margin-top:1.4rem;display:grid;grid-template-columns:1fr 1fr;gap:1.4rem}
+.calc label{display:block;font-weight:600;font-size:.92rem;margin:.7rem 0 .2rem}
+.calc input{width:100%;font:inherit;padding:.6rem .7rem;border:1px solid var(--line);border-radius:4px;background:var(--bg);color:var(--ink)}
+.out{background:var(--hero);color:#E7ECEF;border-radius:6px;padding:1.3rem;align-self:stretch;display:flex;flex-direction:column;justify-content:center}
+.out b{font:700 2.3rem "Bricolage Grotesque",sans-serif;color:#E3B04B;display:block}
+.out small{color:#aebbc6}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem}
+.check li{list-style:none;margin-left:-1.2rem}.check input{margin-right:.6rem;accent-color:var(--gold)}
+.steps{counter-reset:s;list-style:none;padding:0;margin-top:1.2rem;border-left:2px solid var(--gold)}
+.steps li{counter-increment:s;position:relative;padding:.2rem 0 1.1rem 1.8rem;margin:0}
+.steps li:before{content:counter(s);position:absolute;left:-14px;top:0;width:26px;height:26px;border-radius:50%;background:var(--gold);color:var(--bg);font:700 .85rem/26px "Bricolage Grotesque",sans-serif;text-align:center}
+footer{max-width:1040px;margin:4rem auto 0;padding:1.4rem 20px 2.5rem;border-top:1px solid var(--line);color:var(--mute);font-size:.88rem}
+@media(max-width:720px){.strat,.risk,.calc,.two{grid-template-columns:1fr}.strat .mini{max-width:320px}}
+.anat{display:grid;grid-template-columns:300px 1fr;gap:2rem;align-items:center;margin-top:1.4rem;background:var(--panel);border:1px solid var(--line);padding:1.2rem}
+.anat svg{width:100%;height:auto;background:var(--hero);border-radius:6px}
+.tgl{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:.8rem}
+.tgl button{font:600 .9rem "Bricolage Grotesque",sans-serif;padding:.45rem .9rem;border-radius:99px;border:1px solid var(--line);background:var(--bg);color:var(--ink);cursor:pointer}
+.tgl button[aria-pressed=true]{background:var(--gold);color:var(--bg);border-color:var(--gold)}
+.pat{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:1rem;margin-top:1.2rem}
+.pat>div{background:var(--panel);border:1px solid var(--line);padding:.8rem}
+.pat svg{width:90px;height:90px;display:block;margin:0 auto .6rem;background:var(--hero);border-radius:6px}
+.pat p{font-size:.88rem;margin:0;color:var(--mute)}
+.tf>div{display:grid;grid-template-columns:120px 1fr;gap:1rem;padding:1rem 0;border-bottom:1px solid var(--line);align-items:start}
+.tf b{font:700 1.1rem "Bricolage Grotesque",sans-serif}
+.tf p{font-size:.93rem;color:var(--mute)}
+.meter{height:8px;background:var(--line);border-radius:4px;margin:.4rem 0;max-width:260px}
+.meter i{display:block;height:100%;border-radius:4px;background:var(--gold)}
+.flow{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem;margin-top:1rem}
+.flow>div{background:var(--hero);color:#E7ECEF;padding:1rem;border-radius:6px}
+.flow b{color:#E3B04B;font-family:"Bricolage Grotesque",sans-serif}
+.flow p{font-size:.9rem;margin:.3rem 0 0;color:#aebbc6}
+details{border-bottom:1px solid var(--line);padding:.9rem 0}
+summary{cursor:pointer;font:700 1.05rem "Bricolage Grotesque",sans-serif}
+details p{color:var(--mute)}
+@media(max-width:720px){.anat,.flow{grid-template-columns:1fr}.tf>div{grid-template-columns:1fr;gap:.2rem}}
+</style>
+</head>
+<body>
+<nav class="bar"><div><b>XAUUSD Guide</b><a href="#basis">Grundlagen</a><a href="#kerzen">Kerzen</a><a href="#zeitrahmen">Zeitrahmen</a><a href="#treiber">Einflüsse</a><a href="#zeiten">Zeiten</a><a href="#strategien">Strategien</a><a href="#risiko">Risiko</a></div></nav>
+
+<header class="hero"><div class="hw">
+<h1>Gold handeln lernen, bevor es Geld kostet</h1>
+<p>XAUUSD verständlich erklärt: Begriffe, Einflussfaktoren, Handelszeiten, einfache Strategien und Risikomanagement für Einsteiger.</p>
+<svg class="chart" id="hero" viewBox="0 0 800 340" role="img" aria-label="Beispielchart mit Aufwärtstrend, gleitendem Durchschnitt und Widerstandslinie"></svg>
+</div></header>
+<div class="stats">
+<div><strong>100 oz</strong><span>entsprechen 1,00 Lot</span></div>
+<div><strong>24/5</strong><span>Handel von Montag bis Freitag</span></div>
+<div><strong>1 USD</strong><span>Kursbewegung = ca. 1 USD bei 0,01 Lot</span></div>
+</div>
+
+<main>
+<div class="warn"><strong>Wichtig:</strong> Dies ist Bildungsinhalt, keine Anlageberatung. Bei CFDs und gehebelten Produkten verlieren die meisten Privatanleger Geld, je nach Produkt auch mehr als den Einsatz. Starte mit einem Demokonto.</div>
+
+<section id="basis">
+<h2>Was ist XAUUSD?</h2>
+<p>XAU steht für Gold, USD für den US-Dollar. Der Kurs zeigt, wie viele Dollar eine Feinunze kostet. Beim Broker handelst du meist einen CFD: Du spekulierst auf Kursbewegungen, ohne Gold zu besitzen, und kannst auf steigende (Buy) oder fallende Kurse (Sell) setzen.</p>
+<p>Gold schwankt oft deutlich stärker als gängige Währungspaare wie EURUSD. Das bietet Chancen, erhöht aber das Risiko.</p>
+<div class="terms">
+<div><h3>Lot</h3><p>Handelsgröße: 1,00 Lot = 100 Unzen, 0,01 Lot = 1 Unze. Kontraktgröße je Broker prüfen.</p></div>
+<div><h3>Spread</h3><p>Differenz zwischen Kauf- und Verkaufskurs. Das sind deine Eintrittskosten, bei News oft deutlich höher.</p></div>
+<div><h3>Hebel</h3><p>Größere Positionen mit wenig Kapital. Er vergrößert Gewinne und Verluste gleichermaßen.</p></div>
+<div><h3>Margin</h3><p>Sicherheitsleistung für offene Positionen. Fällt das Konto zu tief, schließt der Broker zwangsweise (Stop-out).</p></div>
+<div><h3>Stop-Loss</h3><p>Automatische Verlustbegrenzung bei einem festgelegten Kurs.</p></div>
+<div><h3>Take-Profit</h3><p>Automatisches Gewinnziel. Swap: Gebühr oder Gutschrift fürs Halten über Nacht.</p></div>
+</div>
+</section>
+
+<section id="kerzen"><h2>Kerzen lesen: die Sprache des Charts</h2><p>Jede Kerze zeigt, was der Kurs in einer festen Zeitspanne gemacht hat: wo er startete, wie hoch und tief er lief und wo er endete. Im H1-Chart ist eine Kerze eine Stunde, im M15-Chart 15 Minuten.</p>
+<div class="anat"><svg id="anat" viewBox="0 0 300 224" role="img" aria-label="Aufbau einer Kerze"></svg><div><div class="tgl"><button id="b1" aria-pressed="true">Steigende Kerze</button><button id="b2" aria-pressed="false">Fallende Kerze</button></div><p id="atx"></p><ul><li><strong>Körper:</strong> der Weg zwischen Eröffnung und Schluss.</li><li><strong>Dochte:</strong> Hoch und Tief, die der Kurs zwischendurch erreicht hat.</li><li><strong>Langer Docht:</strong> Der Kurs wurde an dieser Stelle zurückgewiesen.</li></ul></div></div>
+<h3 style="margin-top:2rem">Vier Muster zum Anfangen</h3>
+<div class="pat"><div><svg id="p1" viewBox="0 0 100 100"></svg><p><b>Doji:</b> Eröffnung und Schluss fast gleich. Der Markt ist unentschlossen.</p></div><div><svg id="p2" viewBox="0 0 100 100"></svg><p><b>Hammer:</b> kleiner Körper, langer unterer Docht. Nach einem Abwärtstrend ein mögliches Umkehrsignal.</p></div><div><svg id="p3" viewBox="0 0 100 100"></svg><p><b>Shooting Star:</b> langer oberer Docht. Nach einem Aufwärtstrend kann er eine Umkehr andeuten.</p></div><div><svg id="p4" viewBox="0 0 100 100"></svg><p><b>Umschlingung:</b> Eine große Kerze verschluckt die vorherige. Zeigt einen Stimmungswechsel.</p></div></div>
+<p>Muster sind nur Hinweise, keine Garantie. Am meisten sagen sie an wichtigen Zonen (Unterstützung, Widerstand) und im Trend aus. Warte immer, bis die Kerze geschlossen ist, denn eine laufende Kerze kann sich noch komplett verändern.</p></section>
+
+<section id="zeitrahmen"><h2>Welcher Zeitrahmen ist der richtige?</h2><p>Der Zeitrahmen ist die Dauer einer Kerze: M steht für Minuten, H für Stunden, D für Tag, W für Woche. Kleine Zeitrahmen sind hektisch und voller Zufallsschwankungen, große sind ruhiger und zuverlässiger.</p>
+<div class="tf" style="margin-top:1rem">
+<div><b>M1 bis M5</b><span><strong>Scalping</strong><span class="meter" style="display:block"><i style="width:15%"></i></span><p style="margin:0">Sehr schnell, viel Rauschen, der Spread frisst einen großen Teil des Gewinns. Für Anfänger nicht geeignet.</p></span></div>
+<div><b>M15 bis M30</b><span><strong>Daytrading und feiner Einstieg</strong><span class="meter" style="display:block"><i style="width:55%"></i></span><p style="margin:0">Gut, um den Einstieg genau zu timen. Verlangt Disziplin und Zeit vor dem Bildschirm.</p></span></div>
+<div><b>H1 bis H4</b><span><strong>Empfehlung für Einsteiger</strong><span class="meter" style="display:block"><i style="width:90%"></i></span><p style="margin:0">Klarere Trends, weniger Fehlsignale und genug Zeit zum Nachdenken. Ein oder zwei Trades pro Tag reichen.</p></span></div>
+<div><b>D1 bis W1</b><span><strong>Swing- und Positionshandel</strong><span class="meter" style="display:block"><i style="width:70%"></i></span><p style="margin:0">Sehr ruhig, aber die Stops sind weit. Dafür brauchst du kleine Lot-Größen oder ein größeres Konto.</p></span></div>
+</div>
+<p style="font-size:.85rem;color:var(--mute)">Der Balken zeigt die Eignung für Einsteiger.</p>
+<h3 style="margin-top:1.8rem">Top-down: von groß nach klein</h3>
+<div class="flow"><div><b>1. H4 oder D1</b><p>Trend und große Zonen bestimmen. Läuft Gold hoch, runter oder seitwärts?</p></div><div><b>2. H1</b><p>Ein Setup suchen: Rücksetzer an einer Zone oder ein Ausbruch in Trendrichtung.</p></div><div><b>3. M15</b><p>Den Einstieg feinjustieren, etwa über eine Bestätigungskerze, und den Stop eng setzen.</p></div></div>
+<p>Beachte: Ein höherer Zeitrahmen bedeutet einen weiteren Stop-Loss und damit eine kleinere Positionsgröße. Rechne das im Positionsrechner unten nach. Tipp für den Start: Trend auf H4, Einstieg auf H1, und bleibe mindestens zwei Wochen bei dieser Kombination, bevor du etwas änderst.</p></section>
+
+<section id="treiber">
+<h2>Was bewegt den Goldpreis?</h2>
+<p>Gold zahlt keine Zinsen und wird in Dollar gehandelt. Deshalb reagiert es stark auf Dollar und Zinserwartungen.</p>
+<div class="drv">
+<div><p><strong>US-Dollar wird stärker.</strong> Gold wird für Käufer aus anderen Währungen teurer.</p><span class="tag dn">Gold eher ↓</span></div>
+<div><p><strong>Zinsen und Realzinsen steigen.</strong> Zinslose Anlagen werden weniger attraktiv. Fed-Entscheide sind zentral.</p><span class="tag dn">Gold eher ↓</span></div>
+<div><p><strong>Krisen und Unsicherheit.</strong> Gold gilt als sicherer Hafen, etwa bei Konflikten oder Marktstress.</p><span class="tag up">Gold eher ↑</span></div>
+<div><p><strong>Zentralbank-Käufe und Nachfrage.</strong> Starke Nachfrage stützt den Preis.</p><span class="tag up">Gold eher ↑</span></div>
+</div>
+<p>Behalte den Wirtschaftskalender im Blick: US-Arbeitsmarktbericht (NFP, meist erster Freitag im Monat), US-Inflation (CPI) und Fed-Zinsentscheide. Danach schwankt der Kurs plötzlich und stark.</p>
+</section>
+
+<section id="zeiten">
+<h2>Wann bewegt sich Gold am meisten?</h2>
+<p>Am aktivsten ist es, wenn London und New York gleichzeitig offen sind. Mehr Bewegung heißt mehr Chancen, aber auch mehr Risiko.</p>
+<div class="tl" aria-label="Handelssessions in MEZ">
+<div class="hrs"><span>0</span><span></span><span></span><span>3</span><span></span><span></span><span>6</span><span></span><span></span><span>9</span><span></span><span></span><span>12</span><span></span><span></span><span>15</span><span></span><span></span><span>18</span><span></span><span></span><span>21</span><span></span><span></span></div>
+<div class="sr"><em>Sydney</em><i style="left:0;width:29.17%"></i><i style="left:91.67%;width:8.33%"></i></div>
+<div class="sr"><em>Tokio</em><i style="left:4.17%;width:37.5%"></i></div>
+<div class="sr"><em>London</em><i style="left:37.5%;width:33.3%"></i></div>
+<div class="sr"><em>New York</em><i style="left:58.33%;width:33.3%"></i></div>
+<div class="ov"></div>
+<p style="font-size:.85rem;color:var(--mute);margin-bottom:0">Ungefähre Zeiten in MEZ. Die goldene Zone (ca. 14 bis 17:30 Uhr) ist die Überlappung von London und New York. Sommerzeit verschiebt die Zeiten.</p>
+</div>
+</section>
+
+<section id="strategien">
+<h2>Einfache Strategien für den Einstieg</h2>
+<div class="strat"><svg class="mini" id="m1" viewBox="0 0 200 100"></svg><div><h3>Trendfolge</h3><p>Du handelst mit dem übergeordneten Trend. Zeigt ein gleitender Durchschnitt (z. B. EMA 50) auf dem Stundenchart nach oben, kaufst du Rücksetzer. Der Stop-Loss liegt unter dem letzten Tief.</p><p class="sw">Stärke: klare Regeln. Schwäche: viele kleine Verluste in Seitwärtsphasen.</p></div></div>
+<div class="strat"><svg class="mini" id="m2" viewBox="0 0 200 100"></svg><div><h3>Ausbruch und Rücktest</h3><p>Du markierst Zonen, an denen der Kurs mehrfach abgeprallt ist (auch runde Marken wie 3.000 USD). Nach dem Ausbruch wartest du den Rücktest ab und steigst dort ein.</p><p class="sw">Stärke: Stop-Loss logisch platzierbar. Schwäche: Fehlausbrüche, besonders bei News.</p></div></div>
+<div class="strat"><svg class="mini" id="m3" viewBox="0 0 200 100"></svg><div><h3>Range-Handel</h3><p>Läuft Gold seitwärts, kaufst du am unteren Rand und verkaufst am oberen. Der Stop-Loss liegt knapp außerhalb der Spanne.</p><p class="sw">Stärke: viele Gelegenheiten bei ruhigem Markt. Schwäche: Bricht die Range, droht ein schneller Verlust.</p></div></div>
+<p>Vom News-Handel direkt um Datenveröffentlichungen raten wir Anfängern ab: Spreads weiten sich aus und Kurse springen. Teste jede Strategie im Demokonto mit 50 bis 100 Trades und führe ein Handelstagebuch.</p>
+</section>
+
+<section id="risiko">
+<h2>Risikomanagement ist der Kern</h2>
+<div class="risk">
+<ul>
+<li>Riskiere pro Trade höchstens 1 % (maximal 2 %) deines Kontos.</li>
+<li>Setze den Stop-Loss vor dem Einstieg und schiebe ihn nie weiter weg.</li>
+<li>Plane mindestens 1:2: Das Gewinnziel liegt doppelt so weit wie der Stop.</li>
+<li>Nutze kleine Positionen und wenig Hebel. Zum Üben reichen 0,01 Lot.</li>
+<li>Lege ein Tageslimit fest (z. B. 3 % Verlust) und höre dann auf.</li>
+</ul>
+<svg class="rr" viewBox="0 0 300 170" role="img" aria-label="Chance-Risiko 1 zu 2">
+<rect x="70" y="14" width="190" height="76" fill="#1E8C74" fill-opacity=".28"/><rect x="70" y="90" width="190" height="38" fill="#C9423C" fill-opacity=".28"/>
+<line x1="20" x2="280" y1="90" y2="90" stroke="#E3B04B" stroke-width="2"/><line x1="70" x2="260" y1="14" y2="14" stroke="#1E8C74" stroke-width="2" stroke-dasharray="5 4"/><line x1="70" x2="260" y1="128" y2="128" stroke="#C9423C" stroke-width="2" stroke-dasharray="5 4"/>
+<g font-family="sans-serif" font-size="12" fill="currentColor"><text x="80" y="56">Take-Profit: +2R</text><text x="80" y="82" fill="#E3B04B">Einstieg</text><text x="80" y="113">Stop-Loss: −1R</text><text x="20" y="156" font-size="11" opacity=".7">R = dein Risiko pro Trade</text></g>
+</svg>
+</div>
+<div class="calc">
+<div><h3>Positionsrechner</h3>
+<label for="bal">Kontostand (USD)</label><input id="bal" type="number" min="0" value="1000" inputmode="decimal">
+<label for="risk">Risiko pro Trade (%)</label><input id="risk" type="number" min="0" step="0.1" value="1" inputmode="decimal">
+<label for="stop">Stop-Abstand (USD Kursbewegung)</label><input id="stop" type="number" min="0" step="0.1" value="10" inputmode="decimal"></div>
+<div class="out" aria-live="polite"><small>Maximaler Verlust</small><b id="rs">10 USD</b><small>Positionsgröße</small><b id="lt">0,01 Lot</b><small id="oz"></small><small style="margin-top:.8rem">Rechnung: Risikobetrag ÷ (Stop-Abstand × 100). Immer abrunden und Kontraktgröße des Brokers prüfen.</small></div>
+</div>
+</section>
+
+<section>
+<div class="two">
+<div><h2>Häufige Fehler</h2>
+<ul><li>Zu große Positionen und zu hoher Hebel.</li><li>Kein Stop-Loss oder Stop nach unten verschieben.</li><li>Verluste sofort zurückholen wollen.</li><li>Vor großen News einsteigen.</li><li>Strategie nach wenigen Trades wechseln.</li><li>Signalgruppen mit garantierten Gewinnen glauben.</li></ul></div>
+<div><h2>Checkliste vor jedem Trade</h2>
+<ul class="check"><li><label><input type="checkbox"> Wirtschaftskalender geprüft?</label></li><li><label><input type="checkbox"> Trend im höheren Zeitrahmen klar?</label></li><li><label><input type="checkbox"> Stop-Loss und Ziel gesetzt?</label></li><li><label><input type="checkbox"> Risiko höchstens 1 %?</label></li><li><label><input type="checkbox"> Chance-Risiko mindestens 1:2?</label></li><li><label><input type="checkbox"> Spread normal?</label></li><li><label><input type="checkbox"> Ruhig und nach Plan?</label></li></ul></div>
+</div>
+</section>
+
+<section>
+<h2>Dein Weg in vier Schritten</h2>
+<ol class="steps">
+<li><strong>Lernen.</strong> Begriffe verstehen und Charts lesen: Kerzen, Trend, Unterstützung, Widerstand.</li>
+<li><strong>Üben.</strong> Demokonto eröffnen, eine Strategie wählen, mindestens 50 Trades protokollieren.</li>
+<li><strong>Broker prüfen.</strong> Regulierung, Spreads und Gebühren vergleichen.</li>
+<li><strong>Klein starten.</strong> Mit wenig Kapital und 0,01 Lot beginnen, erst bei stabilen Ergebnissen steigern.</li>
+</ol>
+</section>
+<section id="faq"><h2>Häufige Fragen</h2>
+<details><summary>Wie viel Startkapital brauche ich?</summary><p>Viele Broker erlauben kleine Konten. Aber mit wenig Kapital sind die Positionen winzig, weil du nur 1 % riskieren solltest. Das ist zum Lernen in Ordnung, aber kein Weg zum schnellen Reichtum. Setze nur Geld ein, dessen Verlust du verkraftest.</p></details>
+<details><summary>Welche Indikatoren soll ich nutzen?</summary><p>Weniger ist mehr. Für den Anfang reichen ein oder zwei gleitende Durchschnitte (z. B. EMA 50 und 200) und saubere Unterstützungs- und Widerstandszonen. Preis und Kerzen sind wichtiger als viele Indikatoren.</p></details>
+<details><summary>Wie lange sollte ich im Demokonto üben?</summary><p>Mindestens 50 bis 100 Trades mit festen Regeln und Tagebuch, oft sind das zwei bis drei Monate. Wechsle erst zu echtem Geld, wenn deine Ergebnisse über einen längeren Zeitraum stabil sind.</p></details>
+<details><summary>Kann man vom Trading leben?</summary><p>Die meisten Privatanleger verlieren Geld. Betrachte Trading als Fähigkeit, die Jahre braucht, und nicht als sicheres Einkommen.</p></details></section>
+</main>
+<footer>Keine Anlageberatung und keine Aufforderung zum Kauf oder Verkauf. Vergangene Ergebnisse sind keine Garantie für zukünftige. Kontraktgrößen, Spreads und Handelszeiten unterscheiden sich je Broker. Die Charts sind schematische Beispiele, keine echten Kurse.</footer>
+<script>
+(function(){
+var $=function(i){return document.getElementById(i)};
+// Beispielchart (schematisch, deterministisch erzeugt)
+var s=7,r=function(){s=s*16807%2147483647;return(s-1)/2147483646},p=100,d=[],i;
+for(i=0;i<38;i++){var o=p,c=o+.45+Math.sin(i/3.3)*1.5+(r()-.5)*2.4;d.push([o,c,Math.max(o,c)+r()*1.3,Math.min(o,c)-r()*1.3]);p=c}
+var W=800,H=340,mn=1e9,mx=-1e9;d.forEach(function(k){mn=Math.min(mn,k[3]);mx=Math.max(mx,k[2])});
+var Y=function(v){return 24+(mx-v)/(mx-mn)*(H-48)},w=W/d.length,h='';
+for(i=0;i<5;i++)h+='<line x1="0" x2="800" y1="'+(24+i*73)+'" y2="'+(24+i*73)+'" stroke="#fff" stroke-opacity=".07"/>';
+var res=0,ri=0;d.slice(0,20).forEach(function(k,j){if(k[2]>res){res=k[2];ri=j}});
+h+='<rect x="'+(ri*w)+'" y="'+(Y(res)-3)+'" width="'+(W-ri*w)+'" height="6" fill="#E3B04B" fill-opacity=".18"/><line x1="'+(ri*w)+'" x2="800" y1="'+Y(res)+'" y2="'+Y(res)+'" stroke="#E3B04B" stroke-dasharray="6 5"/>';
+d.forEach(function(k,j){var x=j*w+w/2,c=k[1]>=k[0]?'#35B79B':'#E5706A';h+='<line x1="'+x+'" x2="'+x+'" y1="'+Y(k[2])+'" y2="'+Y(k[3])+'" stroke="'+c+'"/><rect x="'+(x-w*.3)+'" y="'+Y(Math.max(k[0],k[1]))+'" width="'+w*.6+'" height="'+Math.max(2,Math.abs(Y(k[0])-Y(k[1])))+'" fill="'+c+'"/>'});
+var e=d[0][1];h+='<polyline fill="none" stroke="#E3B04B" stroke-width="2.5" points="'+d.map(function(k,j){e+=(k[1]-e)*.18;return(j*w+w/2)+','+Y(e)}).join(' ')+'"/>';
+h+='<g font-family="sans-serif" font-size="13" fill="#E3B04B"><text x="'+(W-190)+'" y="'+(Y(res)-10)+'">Widerstand (Beispiel)</text><text x="14" y="'+(H-10)+'">Gleitender Durchschnitt</text></g>';
+$('hero').innerHTML=h;
+// Mini-Charts
+function mini(id,ys,lines,ema){var n=ys.length,P=function(v){return 92-v*.84},t='';
+(lines||[]).forEach(function(l){t+='<line x1="0" x2="200" y1="'+P(l)+'" y2="'+P(l)+'" stroke="#E3B04B" stroke-dasharray="4 3" opacity=".8"/>'});
+if(ema)t+='<line x1="0" y1="'+P(ema[0])+'" x2="200" y2="'+P(ema[1])+'" stroke="#E3B04B" stroke-width="1.5" opacity=".8"/>';
+t+='<polyline fill="none" stroke="#35B79B" stroke-width="2.5" stroke-linejoin="round" points="'+ys.map(function(v,j){return(8+j*184/(n-1))+','+P(v)}).join(' ')+'"/>';$(id).innerHTML=t}
+mini('m1',[20,30,24,38,33,48,42,58,52,70,64,80],0,[18,66]);
+mini('m2',[46,56,48,57,49,56,52,72,62,66,84,90],[58]);
+mini('m3',[30,70,32,68,31,72,33,69,30,70],[70,30]);
+function cand(id,ks){var n=ks.length,Y=function(v){return 94-v*.88},t='';ks.forEach(function(k,j){var x=100*(j+.5)/n,c=k[1]>=k[0]?'#35B79B':'#E5706A',a=Y(Math.max(k[0],k[1])),b=Y(Math.min(k[0],k[1]));t+='<line x1="'+x+'" x2="'+x+'" y1="'+Y(k[2])+'" y2="'+Y(k[3])+'" stroke="'+c+'" stroke-width="2"/><rect x="'+(x-8)+'" y="'+a+'" width="16" height="'+Math.max(2,b-a)+'" fill="'+c+'"/>'});$(id).innerHTML=t}
+cand('p1',[[50,51,85,15]]);cand('p2',[[70,78,82,20]]);cand('p3',[[30,22,85,18]]);cand('p4',[[60,50,62,48],[46,70,72,44]]);
+function anat(b){var c=b?'#35B79B':'#E5706A';$('anat').innerHTML='<line x1="110" x2="110" y1="30" y2="190" stroke="'+c+'" stroke-width="4"/><rect x="85" y="70" width="50" height="80" fill="'+c+'"/><g stroke="#E3B04B" stroke-dasharray="3 3"><line x1="125" x2="170" y1="30" y2="30"/><line x1="140" x2="170" y1="70" y2="70"/><line x1="140" x2="170" y1="150" y2="150"/><line x1="125" x2="170" y1="190" y2="190"/></g><g font-family="sans-serif" font-size="13" fill="#E7ECEF"><text x="176" y="34">Hoch (High)</text><text x="176" y="74">'+(b?'Schluss (Close)':'Eröffnung (Open)')+'</text><text x="176" y="154">'+(b?'Eröffnung (Open)':'Schluss (Close)')+'</text><text x="176" y="194">Tief (Low)</text><text x="14" y="24" fill="#aebbc6" font-size="12">Docht oben</text><text x="14" y="214" fill="#aebbc6" font-size="12">Docht unten</text></g>';
+$('atx').textContent=b?'Steigende Kerze: Der Kurs schloss höher, als er eröffnet hat. Sie wird meist grün oder hell dargestellt. Käufer waren in dieser Zeitspanne stärker.':'Fallende Kerze: Der Kurs schloss tiefer, als er eröffnet hat. Sie wird meist rot oder dunkel dargestellt. Verkäufer waren in dieser Zeitspanne stärker.';
+$('b1').setAttribute('aria-pressed',b);$('b2').setAttribute('aria-pressed',!b)}
+$('b1').addEventListener('click',function(){anat(true)});$('b2').addEventListener('click',function(){anat(false)});anat(true);
+// Rechner
+function n(v){return Math.max(0,parseFloat(v)||0)}
+function calc(){var rs=n($('bal').value)*n($('risk').value)/100,st=n($('stop').value),l=st>0?Math.floor(rs/(st*100)*100)/100:0;
+$('rs').textContent=rs.toLocaleString('de-DE',{maximumFractionDigits:2})+' USD';
+$('lt').textContent=l.toLocaleString('de-DE',{minimumFractionDigits:2})+' Lot';
+$('oz').textContent=l>0?(l*100).toLocaleString('de-DE')+' Unzen':'Stop zu weit oder Risiko zu klein für 0,01 Lot'}
+['bal','risk','stop'].forEach(function(k){$(k).addEventListener('input',calc)});calc();
+})();
+</script>
+</body>
+</html>
